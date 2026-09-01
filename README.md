@@ -1,16 +1,48 @@
-# React + Vite
+# German Language Institute — React + MUI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete responsive React/Vite starter website based on the supplied German Language Institute brief.
 
-Currently, two official plugins are available:
+## Included
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + Vite
+- Material UI (MUI)
+- React Router
+- Responsive desktop/tablet/mobile layout
+- English, German, and Arabic UI
+- Arabic RTL support
+- Light/dark mode
+- Home, Courses, Prices, Test Your German, Contact, Registration
+- Impressum, Datenschutz, AGB placeholder pages
+- Contact and registration form validation
+- Interactive German mini-test
+- Supplied institute logo in `public/logo.png`
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Then open the local Vite URL shown in the terminal.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Important content placeholders
+
+The supplied brief does not contain official course catalog data, tuition prices, address, phone, email, Instagram URL, Google Maps location, or legal text. Those areas are deliberately marked as placeholders in the source instead of inventing official institute information.
+
+Update `src/main.jsx`:
+
+- `courses`
+- `contactInfo`
+- legal-page content
+- hero imagery if a licensed Münster image is preferred
+- form submission handlers/backend integration
+
+The contact and registration forms currently validate in the browser only; connect them to your preferred backend/email service before launch.
