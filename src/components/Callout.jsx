@@ -27,7 +27,13 @@ export default function Callout({ t }) {
         component={Link}
         to="/register"
         variant="contained"
-        endIcon={<ArrowForward />}
+        endIcon={
+          <ArrowForward
+            sx={{
+              color: "#ffff",
+            }}
+          />
+        }
       >
         {t.cta}
       </Button>

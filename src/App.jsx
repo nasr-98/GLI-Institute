@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Registration from "./pages/Registration";
 import GermanTest from "./pages/GermanTest";
 import LegalPage from "./pages/LegalPage";
+import About from "./pages/About";
 
 import "./styles.css";
 
@@ -28,10 +29,10 @@ function AppContent() {
         palette: {
           mode,
           primary: {
-            main: "#155EEF",
+            main: "#1E3A8A",
           },
           secondary: {
-            main: "#FFD400",
+            main: "#FBBF24",
           },
           background:
             mode === "light"
@@ -68,12 +69,40 @@ function AppContent() {
         },
 
         components: {
+          MuiChip: {
+            styleOverrides: {
+              outlined: {
+                color: mode === "light" ? "#1E3A8A" : "#FFFFFF",
+                borderColor: mode === "light" ? "#1E3A8A" : "#FFFFFF",
+              },
+            },
+          },
+          MuiAvatar: {
+            styleOverrides: {
+              root: {
+                color: mode === "light" ? "#FFFFFF" : "#FFFFFF",
+                borderColor: mode === "light" ? "#1E3A8A" : "#FFFFFF",
+              },
+            },
+          },
+          MuiSvgIcon: {
+            styleOverrides: {
+              root: {
+                color: mode === "light" ? "#1E3A8A" : "#FBBF24",
+                borderColor: mode === "light" ? "#1E3A8A" : "#FBBF24",
+              },
+            },
+          },
           MuiButton: {
             styleOverrides: {
               root: {
                 borderRadius: 12,
                 textTransform: "none",
                 fontWeight: 700,
+              },
+              outlined: {
+                color: mode === "light" ? "#1E3A8A" : "#FFFFFF",
+                borderColor: mode === "light" ? "#1E3A8A" : "#FFFFFF",
               },
             },
           },
@@ -83,6 +112,13 @@ function AppContent() {
               root: {
                 border: "1px solid rgba(128,145,170,.18)",
                 boxShadow: "0 12px 36px rgba(20,40,80,.08)",
+              },
+            },
+          },
+          MuiTypography: {
+            styleOverrides: {
+              h5: {
+                color: mode === "light" ? "#1E3A8A" : "#FBBF24",
               },
             },
           },
@@ -101,6 +137,8 @@ function AppContent() {
 
         <Routes>
           <Route path="/" element={<Home lang={lang} />} />
+
+          <Route path="/about" element={<About lang={lang} />} />
 
           <Route path="/courses" element={<Courses lang={lang} />} />
 

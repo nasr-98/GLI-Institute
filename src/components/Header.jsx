@@ -39,7 +39,7 @@ export default function Header({ lang, setLang, mode, setMode }) {
   const isMobile = useMediaQuery("(max-width:900px)");
   const links = [
     ["/", t.home],
-    ["/#about", t.nav.about],
+    ["/about", t.nav.about],
     ["/courses", t.nav.courses],
     ["/prices", t.nav.prices],
     ["/", t.nav.test],
@@ -102,7 +102,11 @@ export default function Header({ lang, setLang, mode, setMode }) {
             >
               {t.home}
             </Button>
-            <Button onClick={() => go("/#about")}>{t.nav.about}</Button>
+
+            <Button component={Link} to="/about">
+              {t.nav.about}
+            </Button>
+
             <Button
               onClick={(e) => setCourseAnchor(e.currentTarget)}
               endIcon={<ExpandMore />}
@@ -151,18 +155,21 @@ export default function Header({ lang, setLang, mode, setMode }) {
             <MenuItem value="ar">AR</MenuItem>
           </Select>
         </FormControl>
+
         <IconButton
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           aria-label="Toggle theme"
         >
           {mode === "light" ? <DarkMode /> : <LightMode />}
         </IconButton>
+
         {isMobile && (
           <IconButton onClick={() => setMobile(true)}>
             <MenuIcon />
           </IconButton>
         )}
       </Toolbar>
+
       <Drawer
         anchor={lang === "ar" ? "right" : "left"}
         open={mobile}
