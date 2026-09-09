@@ -12,7 +12,9 @@ import { School, ArrowForward } from "@mui/icons-material";
 
 import { Link } from "react-router-dom";
 
-export default function GridCards({ items, t }) {
+import courses from "../data/courses";
+
+export default function GridCards({ items, t, lang }) {
   return (
     <Box
       sx={{
@@ -48,7 +50,7 @@ export default function GridCards({ items, t }) {
             </Typography>
             <Button
               component={Link}
-              to="/courses"
+              to={`/course/${c.id}`}
               sx={{ mt: 2, px: 0 }}
               endIcon={<ArrowForward />}
             >

@@ -134,7 +134,7 @@ export default function Home({ lang }) {
           <Typography color="text.secondary" sx={{ mb: 4, maxWidth: 760 }}>
             {t.coursesText}
           </Typography>
-          <GridCards items={courses.slice(0, 3)} t={t} />
+          <GridCards items={courses[lang].slice(0, 3)} t={t} />
         </Box>
 
         <Callout t={t} />

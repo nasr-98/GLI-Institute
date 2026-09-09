@@ -16,6 +16,7 @@ import Registration from "./pages/Registration";
 import GermanTest from "./pages/GermanTest";
 import LegalPage from "./pages/LegalPage";
 import About from "./pages/About";
+import Course from "./pages/Course";
 
 import "./styles.css";
 
@@ -141,6 +142,7 @@ function AppContent() {
           <Route path="/about" element={<About lang={lang} />} />
 
           <Route path="/courses" element={<Courses lang={lang} />} />
+          <Route path="/course/:id" element={<Course lang={lang} />} />
 
           <Route path="/prices" element={<Prices lang={lang} />} />
 
